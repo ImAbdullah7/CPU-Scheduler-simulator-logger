@@ -13,17 +13,12 @@ abstract public class CPUSchedulerModel {
 	abstract protected String shortName();
 	
 	protected void waitFor(int amount) {
-        // There are two valid ways to wait when executing jobs. 
-		// 1: Using sleep
-		// 2: Using a counter (The doctor did approve this way)
-		
 		try {
         	Thread.sleep(amount);
         } catch(Exception e) {
+        	// Approved by the professor
         	for(int i = 0; i < amount; i++);	
         }
-        
-//        for(int i = 0; i < amount; i++);
 	}
 	
 	protected void addToReadyQueue(ArrayList<RawJob> rawJobs) {
